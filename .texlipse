@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Mon Jun 28 10:50:32 CEST 2021
+outputDir=target
+markDer=true
+mainTexFile=varihazy-peter-cv.tex
+bibrefDir=
+builderNum=2
+outputFile=varihazy-peter-cv.pdf
+makeIndSty=
+srcDir=src
+markTmpDer=true
+tempDir=tmp
+outputFormat=pdf
+langSpell=en
