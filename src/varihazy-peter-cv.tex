@@ -5,6 +5,7 @@
 \documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
 
 %----------------------------------------------------------------------------------------
+\usepackage[none]{hyphenat}
 
 \begin{document}
 
@@ -12,7 +13,12 @@
 %	TITLE AND CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
 
-\begin{minipage}[t]{0.45\textwidth} % 45% of the page width for name
+\newcommand{\iconl}[3]{% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+	\vcenteredhbox{\textcolor{black}{#3}}% Text
+	\hspace{0.2cm}% Whitespace
+	\vcenteredhbox{\colorbox{black}{\makebox(#2, #2){\textcolor{white}{\large\csname fa#1\endcsname}}}}% Icon and box
+}
+\begin{minipage}[t]{0.5\textwidth} % 45% of the page width for name
 	\vspace{-\baselineskip} % Required for vertically aligning minipages
 	
 	% If your name is very short, use just one of the lines below
@@ -25,22 +31,15 @@
 	
 	{\huge Senior Java Developer} % Career or current job title
 \end{minipage}
-\begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the first row of icons
+\begin{minipage}[t]{0.5\textwidth} % 27.5% of the page width for the first row of icons
+	\begin{flushright}
 	\vspace{-\baselineskip} % Required for vertically aligning minipages
-
-	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
-	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
-	\icon{MapMarker}{12}{7625 Pecs}\\
-	\icon{Phone}{12}{+36 70 637 4778}\\
-	\icon{At}{12}{\href{mailto:varihazy.peter@gmail.com}{varihazy.peter@gmail.com}}\\	
-\end{minipage}
-\begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the second row of icons
-	\vspace{-\baselineskip} % Required for vertically aligning minipages
-	
-	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
-	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
-	\icon{Linkedin}{12}{\href{https://www.linkedin.com/in/p\%C3\%A9ter-varih\%C3\%A1zy-b84021153/}{péter-variházy-b84021153}}\\
-	\icon{Facebook}{12}{\href{https://www.facebook.com/peter.varihazy}{peter.varihazy}}\\
+	\iconl{MapMarker}{12}{Pécs, Hungary} \\
+	\iconl{Phone}{12}{\href{tel:+36706374778}{+36 70 637 4778}} \\
+	\iconl{Facebook}{12}{\href{https://www.facebook.com/peter.varihazy}{peter.varihazy}} \\
+	\iconl{Linkedin}{12}{\href{https://www.linkedin.com/in/p\%C3\%A9ter-varih\%C3\%A1zy-b84021153/}{péter-variházy-b84021153}} \\
+	\iconl{At}{12}{\href{mailto:varihazy.peter@gmail.com}{varihazy.peter@gmail.com}} \\
+	\end{flushright}
 \end{minipage}
 
 \vspace{0.5cm}
@@ -53,32 +52,31 @@
 
 \begin{minipage}[t]{0.48\textwidth} % 40% of the page width for the introduction text
 	\vspace{-\baselineskip} % Required for vertically aligning minipages
-	From my childhood I liked creating things: play with lego, drow maps, build sand castles.
-	So choosing the programming carrier was an pretty obvious choice.
-	Because of my work I toutched many field from VAT reporting to industrial farming. 
-	Some project was good, same was not. 
-	Because of this I identified a couple of characteristics or path that is good for me, my work, and my firm. \\
+	From an early age I liked creating things. I used to play with lego, draw maps and build sand castles.
+	So choosing programming as my career was a pretty obvious choice.
+	During my work I touched many fields, ranging from industrial farming to VAT reporting. \\
 
-	\textbf{Simplicity} -- We developers are working (mostly) in teams, so one of the most importand factor of a code is the readibility. \\
+	\textbf{My motto}:
+	You cannot understand everything.
+	You cannot achieve perfection in anything.
+	Attempt it, and you can see the world and yourself in different ways. \\
 
+	In the last couple of years I started to live and work by some patterns or philisophies that are both good for me and for my firm. \\
 \end{minipage}
 \hfill % Whitespace between
 \begin{minipage}[t]{0.5\textwidth} % 50% of the page for the skills bar chart
 	\vspace{-\baselineskip} % Required for vertically aligning minipages
-	\textbf{Twelve-Factor App} -- Simple constraints, that can make the development, deployment and testing easier. \\
-	\textbf{Test Driven Development (TDD)} -- I like sleep well and not worrying about the last deployment or some fresh changes. Ergo I write test, and use them to speed up my development. \\
-	\textbf{Kubernetes} -- It can take care of many thing so I can focus on my work. \\
-	\textbf{Continuous integration} -- There are thing that cannot plan, maybe to complex, maybe too many unknown factor. Keeping the development circle short can make the development more reliable. Working on small steps with a well divided tasks.\\
-	\textbf{Do not reinvent the wheel} -- If I need an ORM I use one, 
-		if I need a csv parser I pick one, 
-		if I need a threadsafe immutable collection I import a library.
-		My job is to create a busines value not to implement lib.\\
-\end{minipage}
 
-\cvsect{My motto}
-{You cannot understand everything. \\
-You cannot achieve perfection in anything. \\
-Attempt it, and you can see the world and yourself in different ways.}
+	\textbf{Simplicity} -- We developers are working (mostly) in teams, so one of the most important factor of any code it's readibility. \\
+	\textbf{Twelve-Factor App} -- Simple constraints, that can make development, deployment and testing easier. \\
+	\textbf{Test Driven Development (TDD)} -- I like to sleep well and not worry about the leatest deployment or any fresh changes.
+	Therefore I write tests, and use them to speed up my development process. \\
+	\textbf{Continuous integration} -- Keeping the development cycle short and working on small steps with well divided tasks can make my work more reliable. No more painful merge with conflicts.\\
+	\textbf{Do not reinvent the wheel} -- If I need an ORM I use one,
+	if I need a csv parser I pick one,
+	if I need a threadsafe or immutable collection I import an implementation.
+	My job is to solve problems not to implement libraries.\\
+\end{minipage}
 
 %----------------------------------------------------------------------------------------
 %	EXPERIENCE
@@ -87,14 +85,28 @@ Attempt it, and you can see the world and yourself in different ways.}
 \cvsect{Experience}
 
 \begin{entrylist}
-	\entry
-		{2017-AUG -- \\ Pécs, Hungary}
-		{Senior Java Developer}
-		{Cubicfox}
-		{VatJar\\
-			A web application that supports European Amazon sellers in their work by automating/supporting their VAT returns.
-			The entire VAT calculation mechanism have to deal with different government obligations and millions of transactions. \\
-			\texttt{Java}\slashsep\texttt{SQL}\slashsep\texttt{spring}\slashsep\texttt{TDD}\slashsep\texttt{GCP}}
+    \entry
+        {2021 \\ Pécs, Hungary}
+        {Java Developer}
+        {Cubicfox}
+        {BMW -- OTD (Official Technical Data)\\
+            Provide tailored technical specification based on vehicle configurations for buyers and governments. \\
+            \texttt{Java EE}
+            \slashsep\texttt{SQL}
+            \slashsep\texttt{JPA}
+            \slashsep\texttt{Stream}}
+    \entry
+        {2017 -- 2021 \\ Pécs, Hungary}
+        {Senior Developer}
+        {Cubicfox}
+        {Hellotax -- VatJar\\
+            A web application that supports European Amazon sellers in their work by automating/supporting their VAT returns.
+            The entire VAT calculation mechanism have to deal with different government obligations and millions of transactions. \\
+            \texttt{Spring}
+            \slashsep\texttt{SQL}
+            \slashsep\texttt{TDD}
+            \slashsep\texttt{GCP}
+            \slashsep\texttt{Amazon MWS}}
 	\entry
 		{2017 \\ Attala, Hungary}
 		{Developer}
@@ -168,54 +180,62 @@ Attempt it, and you can see the world and yourself in different ways.}
 %	ADDITIONAL INFORMATION
 %----------------------------------------------------------------------------------------
 
-\begin{minipage}[t]{0.48\textwidth}
+\begin{minipage}[t]{0.49\textwidth}
 	\vspace{-\baselineskip} % Required for vertically aligning minipages
 
 	\cvsect{Tools}
 
-	\textbf{Linux} --
-	I am useing the Arch linux as my only OS more than 10 years.
+	\textbf{Linux} -- I have been using Arch linux as my only OS for more than 10 years.
 
-	\textbf{Docker} -- 
-	Because I configured multiple VM during my life,
-	I prefer the more isolated approch. Since 2020 I used the docker for miltiple project. \\
-	Insted of installing a services (like db) I like to use the docker images, so I can chose the version or have multiple one in the same time.
+	\textbf{Docker} --
+	Because I configured multiple VM durings my career, I prefer a more isolated approach.
+	I have been using docker for multiple projects since 2020. \\
+	Instead of installing a services (like db) I like to use docker images, 
+	so I can choose the version or have multiple ones in the same time.
 
 	\textbf{Git}
 
-	\textbf{Jira, confluence, BitBucket} --
-	I started to use the Attlassian products since 2019.
+	\textbf{Jira, confluence, BitBucket} -- I have been using Attlassian products since 2019.
 
-	\textbf{Maven} -- From running the test to formating the source code.
+	\textbf{Maven} -- From running tests to formating the source code.
 
-	\textbf{Eclipse} --
-	I used Pycharm, netBeans, VS code, but my default choice (if it is possible) is the Eclipse.
+	\textbf{Eclipse} -- I used Pycharm, NetBeans, VS code, but my default choice (if it is possible) is Eclipse.
 
-	\textbf{Google Cloud Platform (GCP)} --
-	I use the GCP since 2019.
+	\textbf{Google Cloud Platform (GCP)} -- I have been using GCP since 2019.
+	\textbf{Kubernetes} -- I have been experimenting with this technology since 2019, however I never had the chance to use it in production environment.
 
+	\cvsect{Languages}
+
+	\textbf{English} - My English is far from good. I have daily stand-up meetings and multiple hours conference calls to collaborate with an international company. I have no certificate.\\
+	\textbf{Hungarian} - Native language.
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.5\textwidth}
+\begin{minipage}[t]{0.49\textwidth}
 	\vspace{-\baselineskip} % Required for vertically aligning minipages
-	
-	\cvsect{programming language / Frameworks / Library}
-	
-	\textbf{Java} -- I develop in Java since 2019. I love the Stream util, the lambda functions, the immutable collections.
-	
-	\textbf{Spring Framework} -- With Java, the Spring come automatically. I like how this frameword reduce the code I need to write. The IoC make my code more reliable and test friendly.
 
-	\textbf{JUnit} -- Because it is very well integrated with the spring I write my test in JUnit 5.
-	
-	\textbf{SQL} -- I use MySQL and PostgreSQL.
+	\cvsect{programming language, Framework, Library}
 
-	\textbf{JPA 2.1 and Hibernate}
+	\textbf{Java} -- I have been developing in Java since 2019.
+		I like the lambda functions and \texttt{@FunctionalInterface} because it makes the composition easier, less verbose.
+		With the immutable objects and collections I do not need to worry about data change and makes the debug easier.
+		The \texttt{CompletableFuture} makes the async code simpler, easier to read.
+		I love the \texttt{Stream} which can use the mentined ones and help separat your code in smaller peaces.
+
+	\textbf{Spring Framework} -- When it comes to java, choosing Spring was easy.
+	This framework reduces the line I need to write. 
+	The IoC makes my code more reliable and test friendly. Allows me to concentrate on business logic.
 	
 
- 	\cvsect{Languages}
-	
-	\textbf{English} - Collaboration with an international firm. No Cert.
- 
+	\textbf{JUnit} -- Because it is very well integrated with spring I write my tests in JUnit 5.
+
+	\textbf{Testcontainers} -- It reduce the gap between dev(/test) and production enviroment.
+
+	\textbf{Lombok} -- It removes the trivial getters, setters, toString and others. With the \texttt{@Value} annotation a DTO class is as short as it can be. I always add to the pom.
+
+	\textbf{SQL} -- I have been using MySQL and PostgreSQL as main data store more than 10 years.
+	Because of the version control, I tend to place my queries in source code instead of the stored procedures or views.
+
+	\textbf{JPA 2.1 and Hibernate} -- Simple persistence layer, happy programmer.
 
 \end{minipage}
 
